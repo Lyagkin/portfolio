@@ -1,0 +1,55 @@
+.sidepanel {
+  position: fixed;
+  top: 215px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 340px;
+  z-index: 3;
+  &__divider {
+    width: 2px;
+    height: 70px;
+    background-color: #212529;
+  }
+  &__link {
+    svg {
+      transform: rotate(-90deg);
+      width: 20px;
+      height: 20px;
+      transition: 0.7s all;
+    }
+    &-telegram {
+      &:hover {
+        transform: scale(1.5);
+        path {
+          fill: #0088cc;
+        }
+      }
+    }
+    &-github {
+      &:hover {
+        transform: scale(1.5);
+        path {
+          fill: #6e5494;
+        }
+      }
+    }
+    &-vk {
+      &:hover {
+        transform: scale(1.5);
+        path {
+          fill: #45668e;
+        }
+      }
+    }
+  }
+  &__text {
+    width: 25px;
+    height: 150px;
+    color: #212529;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
+}

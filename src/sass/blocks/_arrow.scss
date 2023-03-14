@@ -1,0 +1,18 @@
+.arrow__up {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  svg {
+    width: 50px;
+    height: 50px;
+    transition: 0.5s all;
+    &:hover {
+      path {
+        fill: rgb(170, 150, 218);
+      }
+    }
+  }
+}

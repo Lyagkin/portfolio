@@ -1,0 +1,121 @@
+.promo {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 205px;
+  transition: 0.5s filter;
+  background: radial-gradient(ellipse at center, #fffeea 0%, #fffeea 35%, #b7e8eb 100%);
+  overflow: hidden;
+
+  .ocean {
+    height: 5%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #015871;
+  }
+
+  .wave {
+    background: url(../img/wave.svg);
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier(.36, .45, .63, .53) infinite;
+    -webkit-animation: wave 7s cubic-bezier(.36, .45, .63, .53) infinite;
+    &:nth-of-type(2) {
+      top: -175px;
+      animation: wave 7s cubic-bezier(.36, .45, .63, .53) -.125s infinite, swell 7s -1.25s infinite;
+      -webkit-animation: wave 7s cubic-bezier(.36, .45, .63, .53) -.125s infinite, swell 7s -1.25s infinite;
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+  }
+
+  @-webkit-keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+  }
+
+  @keyframes swell {
+    0%, 100% {
+      transform: translate3d(0, -25px, 0);
+    }
+    50% {
+      transform: translate3d(0, 5px, 0);
+    }
+  }
+
+  @-webkit-keyframes swell {
+    0%, 100% {
+      transform: translate3d(0, -25px, 0);
+    }
+    50% {
+      transform: translate3d(0, 5px, 0);
+    }
+  }
+
+
+  &__title {
+    width: 55%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  &__circle {
+    position: relative;
+    padding-left: 10px;
+    z-index: 2;
+    @include before_circle;
+    &::before {
+      background-color: $background-color;
+    }
+  }
+  &__btns {
+    margin-top: 25px;
+    display: flex;
+    width: 280px;
+    align-items: center;
+    justify-content: space-between;
+    a {
+      &:hover {
+        color: #212529;
+      }
+    }
+  }
+  &__link {
+    color: #212529;
+    text-decoration: none;
+  }
+  &__request {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    bottom: 30px;
+    right: 30px;
+  }
+
+  .btn_active {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .btn_noneActive {
+    opacity: 0.5;
+  }
+}
+
+.blur {
+  filter: blur(20px);
+}

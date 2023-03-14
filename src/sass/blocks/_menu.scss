@@ -1,0 +1,153 @@
+.hamburger {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  height: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  cursor: pointer;
+  transition: 0.6s all;
+  span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fef7e1;
+  }
+  span.long {
+    width: 36px;
+  }
+  &:hover {
+    transform: scale(1.25);
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.7s all;
+  &.active {
+    left: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+  &__block {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: $background-color;
+    transition: 0.6s all;
+    z-index: 10;
+  }
+  &__close {
+    position: absolute;
+    width: 25px;
+    top: 10%;
+    right: 7%;
+    cursor: pointer;
+    transition: 0.6s all ease-in-out;
+    img {
+      display: block;
+      width: 100%;
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    top: 18%;
+    bottom: 20%;
+    right: 7%;
+  }
+  &__title {
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  &__divider {
+    width: 60px;
+    height: 3px;
+    background-color: rgba(251, 251,251, 0.7);
+    margin-bottom: 30px;
+  }
+  &__ul {
+    list-style-type: none;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 46px;
+    li {
+      display: flex;
+      justify-content: end;
+      margin-bottom: 20px;
+    }
+    a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      transition: 0.6s all ease-in-out;
+      &:hover {
+        transform: scale(1.3);
+        color: #9966CC;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  &__social {
+    position: absolute;
+    bottom: 10%;
+    left: 7%;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    svg {
+      width: 35px;
+      height: 35px;
+      transition: 0.6s all ease-in-out;
+    }
+    &_telegram {
+      &:hover {
+        transform: scale(1.5);
+        path {
+          fill: #0088cc;
+        }
+      }
+    }
+    &_github {
+      &:hover {
+        transform: scale(1.5);
+        path {
+          fill: #6e5494;
+        }
+      }
+    }
+    &_vk {
+      &:hover {
+        transform: scale(1.5);
+        path {
+          fill: #45668e;
+        }
+      }
+    }
+  }
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fef7e1;
+    opacity: 0.75;
+  }
+}
