@@ -10,8 +10,9 @@
     height: 50px;
     transition: 0.5s all;
     &:hover {
+      transform: translateY(-10px);
       path {
-        fill: rgb(170, 150, 218);
+        fill: rgb(0, 0, 0);
       }
     }
   }
