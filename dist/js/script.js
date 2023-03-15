@@ -221,7 +221,6 @@ arrowLink.addEventListener("click", (e) => {
 // Наблюдатель за изображениями в секциях about/contact
 
 const Allimgs = document.querySelectorAll("[data-src]");
-console.log(Allimgs);
 
 const loadImg = function(entries, observer) {
 	const [entry] = entries;
@@ -236,7 +235,6 @@ const loadImg = function(entries, observer) {
 
 	// при событии load убираем стиль размытия
 	entry.target.addEventListener("load", () => {
-		console.log("target");
 		entry.target.classList.remove("lazy__img");
 	});
 
