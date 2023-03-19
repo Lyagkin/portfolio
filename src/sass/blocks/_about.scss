@@ -2,12 +2,12 @@
   padding-top: 150px;
   position: relative;
   .ocean {
-    height: 3%;
+    height: 5%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient( #015871, #ffffff, #f3f3f3);
+    background: linear-gradient( #ffffff, #f3f3f3);
   }
   &__wrapper {
     display: grid;
