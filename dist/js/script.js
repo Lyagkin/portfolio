@@ -93,26 +93,28 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const fadeIn = (el, timeout, display = "block") => {
     // функция показа стрелки на экране
-    el.classList.add("showEl");
-    el.style.opacity = 0;
-    el.style.display = display;
-    el.style.transition = `opacity ${timeout}ms`;
+    el.classList.add("showEl"); // добавляем элементу класс, чтобы был триггер для наблюдателя за переченичем, когда применить функцию fadeOut
+    el.style.opacity = 0; // задаем прозрачность 0
+    el.style.display = display; // свойство display приходит из аргумента - block
+    el.style.transition = `opacity ${timeout}ms`; // свойство перехода прозрачность в мс из аргументаы
 
     setTimeout(() => {
+      // отложенная функция задает прозрачность 1 через 10мс
       el.style.opacity = 1;
     }, 10);
   };
 
   const fadeOut = (el, timeout) => {
     // функция скрытия стрелки с экрана
-    el.style.opacity = 1;
-    el.style.transition = `opacity ${timeout}ms`;
-    el.style.opacity = 0;
+    el.style.opacity = 1; // задаем прозрачность 1
+    el.style.transition = `opacity ${timeout}ms`; // переход прозрачности за мс из аргумента
+    el.style.opacity = 0; // прозрачность 0
 
     setTimeout(() => {
+      // отложенная функция задает display: none через мс из аргумента
       el.style.display = "none";
     }, timeout);
-    el.classList.remove("showEl");
+    el.classList.remove("showEl"); // удаяляется класс элемента
   };
 
   // наблюдатель за секцией resume
@@ -125,7 +127,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!entry.isIntersecting) return;
 
-    fadeIn(arrow, 800);
+    fadeIn(arrow, 500);
   };
 
   const arrowObserver = new IntersectionObserver(showArrow, {
